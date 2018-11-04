@@ -1,7 +1,5 @@
 %w(
   epel-release
-  gcc
-  make
   strace
   sysstat
   lsof
@@ -9,7 +7,6 @@
   telnet
   nc
   traceroute
-  patch
   openssl-devel
   readline-devel
   zlib-devel
