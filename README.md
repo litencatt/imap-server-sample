@@ -1,4 +1,5 @@
-Build dovecot IMAP server recipe.
+Build dovecot IMAP test server.
+NOT for production.
 
 ## Usage
 ### Setup
