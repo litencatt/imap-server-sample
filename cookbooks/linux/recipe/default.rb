@@ -20,3 +20,5 @@ end
 service 'iptables' do
   action [:disable, :stop]
 end
+
+include_recipe 'selinux::disabled'
