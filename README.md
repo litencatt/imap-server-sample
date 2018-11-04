@@ -13,7 +13,7 @@ $ vagrant up
 $ vagrant ssh-config >> ~/.ssh/config
 
 $ bundle install --path vendor/bundle --jobs=4
-$ bundle exec itamae ssh --host imap nodes/imap-server-development.yml entry.rb
+$ bundle exec itamae ssh --host imap -y nodes/imap-server-development.yml entry.rb
 ```
 
 ### IMAP connection check
