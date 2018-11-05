@@ -17,8 +17,9 @@ $ bundle exec itamae ssh --host imap -y nodes/imap-server-development.yml entry.
 ```
 
 ### IMAP connection check
-ホストPCからのIMAPサーバ接続確認
-vagrant内から行う場合はIPをlocalhost(127.0.0.1)に変えればOK
+- ホストPCからのIMAPサーバ接続確認
+- vagrant内から行う場合はIPをlocalhost(127.0.0.1)に変えればOK
+- メールデータはなにもないので置く必要あり
 ```
 $ telnet 192.168.33.10 143
 Trying 192.168.33.10...
