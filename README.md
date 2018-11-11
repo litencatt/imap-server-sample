@@ -2,18 +2,27 @@ Build dovecot IMAP test server.
 NOT for production.
 
 ## Usage
-### Setup
+### Setup IMAP server
 
 ```
 $ git clone git@github.com:litencatt/imap_server.git
 $ cd /path/to/imap_server
 
-$ vagrant up
+$ vagrant up imap
 
-$ vagrant ssh-config >> ~/.ssh/config
+$ vagrant ssh-config imap >> ~/.ssh/config
 
 $ bundle install --path vendor/bundle --jobs=4
 $ bundle exec itamae ssh --host imap -y nodes/imap-server-development.yml entry.rb
+```
+
+### Setup Rainloop client
+```
+$ vagrant up client
+
+$ vagrant ssh-config client >> ~/.ssh/config
+
+$ be itamae ssh --host client -y nodes/client.yml entry.rb
 ```
 
 ### IMAP connection check
