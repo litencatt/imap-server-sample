@@ -10,6 +10,7 @@
   openssl-devel
   readline-devel
   zlib-devel
+  unzip
 ).each do |pkg|
   package pkg
 end

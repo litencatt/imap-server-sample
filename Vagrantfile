@@ -3,7 +3,6 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-7.4"
-  #config.vm.box = "centos/7"
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [
     ".git/",
     "vendor/bundle"
@@ -12,6 +11,15 @@ Vagrant.configure("2") do |config|
   config.vm.define :imap do |c|
     c.vm.network :private_network, ip: '192.168.33.10'
     c.vm.hostname = :imap01
+    config.vm.provider :virtualbox do |vbox|
+      vbox.customize ["modifyvm", :id, "--memory", 512]
+      vbox.customize ["modifyvm", :id, "--cpus", 2]
+    end
+  end
+
+  config.vm.define :client do |c|
+    c.vm.network :private_network, ip: '192.168.33.11'
+    c.vm.hostname = :client
     config.vm.provider :virtualbox do |vbox|
       vbox.customize ["modifyvm", :id, "--memory", 512]
       vbox.customize ["modifyvm", :id, "--cpus", 2]
