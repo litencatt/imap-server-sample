@@ -24,3 +24,14 @@ remote_file "/etc/dovecot/users" do
   source "files/users"
   notifies :restart, 'service[dovecot]'
 end
+
+execute "remove default file" do
+  user 'root'
+  command "rm -rf /var/mail/vagrant"
+end
+
+directory "/var/mail/vagrant" do
+  mode '777'
+  owner 'root'
+  group 'mail'
+end
