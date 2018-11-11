@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define :mailclient do |c|
+  config.vm.define :client do |c|
     c.vm.network :private_network, ip: '192.168.33.11'
     c.vm.hostname = :client
     config.vm.provider :virtualbox do |vbox|
