@@ -25,4 +25,13 @@ Vagrant.configure("2") do |config|
       vbox.customize ["modifyvm", :id, "--cpus", 2]
     end
   end
+
+  config.vm.define :roundcube do |c|
+    c.vm.network :private_network, ip: '192.168.33.12'
+    c.vm.hostname = :client
+    config.vm.provider :virtualbox do |vbox|
+      vbox.customize ["modifyvm", :id, "--memory", 512]
+      vbox.customize ["modifyvm", :id, "--cpus", 2]
+    end
+  end
 end
