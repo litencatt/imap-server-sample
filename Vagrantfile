@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Vagrant::DEFAULT_SERVER_URL.replace('https://vagrantcloud.com')
+
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-7.4"
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [
