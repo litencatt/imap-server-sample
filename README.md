@@ -16,13 +16,22 @@ $ bundle install --path vendor/bundle --jobs=4
 $ bundle exec itamae ssh --host imap -y nodes/imap-server-development.yml entry.rb
 ```
 
+### Setup Roundcube client
+```
+$ vagrant up roundcube
+
+$ vagrant ssh-config roundcube >> ~/.ssh/config
+
+$ be itamae ssh --host roundcube -y nodes/roundcube.yml entry.rb
+```
+
 ### Setup Rainloop client
 ```
-$ vagrant up client
+$ vagrant up rainloop
 
-$ vagrant ssh-config client >> ~/.ssh/config
+$ vagrant ssh-config rainloop >> ~/.ssh/config
 
-$ be itamae ssh --host client -y nodes/client.yml entry.rb
+$ be itamae ssh --host rainloop -y nodes/rainloop.yml entry.rb
 ```
 
 ### IMAP connection check
