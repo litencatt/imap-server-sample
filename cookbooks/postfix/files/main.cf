@@ -1,13 +1,24 @@
+# Mail send
 myhostname = hoge.com
 mydomain = hoge.com
 myorigin = $mydomain
-mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
-relayhost =
-relay_domains = $mydestination
-mail_spool_directory = /var/mail/
-mynetworks = 127.0.0.0/8
+
+# Mail receive
 inet_interfaces = all
 inet_protocols = ipv4
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+relay_domains = $mydestination
+relayhost =
+
+# Trust networks of mail clients
+mynetworks = 127.0.0.0/8
+
+# Maildir
+home_mailbox = Maildir/
+mail_spool_directory = /var/mail/
+
+# Security
+disable_vrfy_command = yes
+smtpd_banner = $myhostname Mail System
 smtpd_etrn_restrictions = reject
 smtpd_helo_required = yes
-disable_vrfy_command = yes
