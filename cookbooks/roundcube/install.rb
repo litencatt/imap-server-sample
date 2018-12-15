@@ -1,19 +1,18 @@
-irectory "/var/www/roundcube" do
+directory "/var/www/roundcube" do
   mode '755'
   owner 'apache'
   group 'apache'
 end
 
-ver = '1.3.8'
 execute "download_roundcube_source" do
   user 'root'
   command <<-EOL
     cd /usr/local/src
-    wget https://github.com/roundcube/roundcubemail/releases/download/#{ver}/roundcubemail-#{ver}-complete.tar.gz
-    tar xzvf roundcubemail-#{ver}-complete.tar.gz
-    mv -f roundcube/* /var/www/roundcube
+    wget https://github.com/roundcube/roundcubemail/releases/download/1.3.8/roundcubemail-1.3.8-complete.tar.gz
+    tar xzvf roundcubemail-1.3.8-complete.tar.gz
+    mv -f roundcubemail-1.3.8/* /var/www/roundcube/.
   EOL
-  not_if "test -e /usr/local/src/roundcubemail-#{var}-complete.tar.gz"
+  not_if "test -e /usr/local/src/roundcubemail-1.3.8-complete.tar.gz"
 end
 
 execute "change_permission" do
