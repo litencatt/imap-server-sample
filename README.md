@@ -1,5 +1,5 @@
-Build dovecot IMAP test server.
-NOT for production.
+Build dovecot IMAP test server.  
+:warning:NOT for production.
 
 ## Usage
 ### Setup IMAP server
@@ -22,7 +22,7 @@ $ vagrant up roundcube
 
 $ vagrant ssh-config roundcube >> ~/.ssh/config
 
-$ be itamae ssh --host roundcube -y nodes/roundcube.yml entry.rb
+$ bundle exec itamae ssh --host roundcube -y nodes/roundcube.yml entry.rb
 ```
 
 ### Setup Rainloop client
@@ -31,7 +31,7 @@ $ vagrant up rainloop
 
 $ vagrant ssh-config rainloop >> ~/.ssh/config
 
-$ be itamae ssh --host rainloop -y nodes/rainloop.yml entry.rb
+$ bundle exec itamae ssh --host rainloop -y nodes/rainloop.yml entry.rb
 ```
 
 ### IMAP connection check
