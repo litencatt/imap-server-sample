@@ -2,17 +2,18 @@ Build dovecot IMAP test server.
 :warning:NOT for production.
 
 ## Usage
-### Setup IMAP server
-
 ```
-$ git clone git@github.com:litencatt/imap_server.git
-$ cd /path/to/imap_server
+$ git clone git@github.com:litencatt/imap-server-sample.git
+$ cd /path/to/imap-server-sample
+$ bundle install --path vendor/bundle --jobs=4
+```
 
+### Setup IMAP server
+```
 $ vagrant up imap
 
 $ vagrant ssh-config imap >> ~/.ssh/config
 
-$ bundle install --path vendor/bundle --jobs=4
 $ bundle exec itamae ssh --host imap -y nodes/imap-server-development.yml entry.rb
 ```
 
