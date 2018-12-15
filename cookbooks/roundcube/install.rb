@@ -1,4 +1,4 @@
-irectory "/var/www/roundcube" do
+directory "/var/www/roundcube" do
   mode '755'
   owner 'apache'
   group 'apache'
